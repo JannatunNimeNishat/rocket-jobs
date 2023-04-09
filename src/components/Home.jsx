@@ -5,6 +5,7 @@ import FeaturedJobs from './FeaturedJobs';
 const Home = () => {
     const [jobCategory, setJobCategory] = useState([]);
     const [featuredJobs, setFeaturedJobs] = useState([]);
+    const [seeMore,setSeeMore] = useState(true);
     //for jobCategory
     useEffect(() => {
         fetch('category.json')
@@ -51,14 +52,25 @@ const Home = () => {
             <h3 className='text-3xl  font-bold text-center'>Featured Jobs</h3>
                 <p className='mt-3 text-center'><small>Explore thousands of job opportunities with all the information you need. Its your future</small></p>
 
-                <div className='mt-8 md:grid grid-cols-2 gap-5'>
+                <>
                     {
-                       featuredJobs.map(singleJob => <FeaturedJobs
-                       key={singleJob.id}
-                       singleJob={singleJob}
-                       ></FeaturedJobs>) 
+                      seeMore ?  
+                      <div className='mt-8 md:grid grid-cols-2 gap-5'>
+                       { featuredJobs.slice(0,4).map(singleJob => <FeaturedJobs
+                        key={singleJob.id}
+                        singleJob={singleJob}
+                        ></FeaturedJobs>) }
+                        <button onClick={()=>setSeeMore(!seeMore)} className='my-btn w-1/6 mx-auto col-span-2'>See ALL Jobs</button>
+                      </div>
+                         : 
+                        <div className='mt-8 md:grid grid-cols-2 gap-5'>
+                            { featuredJobs.map(singleJob => <FeaturedJobs
+                            key={singleJob.id}
+                            singleJob={singleJob}
+                            ></FeaturedJobs>) }
+                        </div>
                     }
-                </div>
+                </>
 
             </section>
 
