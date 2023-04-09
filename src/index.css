@@ -2,9 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-
+.my-container{
+  @apply  w-full md:w-10/12 mx-auto ;
+}
+.active{
+  @apply text-purple-600 font-semibold;
+}
+.my-btn{
+  @apply px-5 py-3 text-white font-semibold rounded-lg bg-gradient-to-r from-[#7E90FE] to-[#9873FF]
+}
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
