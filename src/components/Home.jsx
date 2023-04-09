@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import JobCategory from './JobCategory';
 import FeaturedJobs from './FeaturedJobs';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
     const [jobCategory, setJobCategory] = useState([]);
     const [featuredJobs, setFeaturedJobs] = useState([]);
     const [seeMore,setSeeMore] = useState(true);
+    const navigate = useNavigate();
     //for jobCategory
     useEffect(() => {
         fetch('category.json')
@@ -20,6 +22,12 @@ const Home = () => {
         .then(data => setFeaturedJobs(data));
     },[])
    
+
+    //
+    const handleViewDetails = (id) =>{
+        // console.log(id);
+        navigate(`/jobDetails/${id}`);
+       }
 
     return (
         <>
@@ -59,6 +67,7 @@ const Home = () => {
                        { featuredJobs.slice(0,4).map(singleJob => <FeaturedJobs
                         key={singleJob.id}
                         singleJob={singleJob}
+                        handleViewDetails={handleViewDetails}
                         ></FeaturedJobs>) }
                         <button onClick={()=>setSeeMore(!seeMore)} className='my-btn w-1/6 mx-auto col-span-2'>See ALL Jobs</button>
                       </div>
@@ -67,6 +76,7 @@ const Home = () => {
                             { featuredJobs.map(singleJob => <FeaturedJobs
                             key={singleJob.id}
                             singleJob={singleJob}
+                            handleViewDetails={handleViewDetails}
                             ></FeaturedJobs>) }
                         </div>
                     }

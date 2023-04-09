@@ -1,8 +1,8 @@
 import React from 'react';
 
-const FeaturedJobs = ({ singleJob }) => {
+const FeaturedJobs = ({ singleJob,handleViewDetails }) => {
     const { id, company_logo, job_title, company_name, job_location, job_type, location, salary } = singleJob;
-   
+  
     return (
         <div className='border rounded md:h-[350px] md:w-[648] p-8 m-5 md:m-0'>
             <img className='mt-5' src={company_logo} alt="" />
@@ -23,7 +23,7 @@ const FeaturedJobs = ({ singleJob }) => {
                 </div>
 
             </div>
-            <button className='my-btn mt-5'>View Details</button>
+            <button onClick={()=> handleViewDetails(id)} className='my-btn mt-5'>View Details</button>
         </div>
     );
 };

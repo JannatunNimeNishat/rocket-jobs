@@ -8,6 +8,8 @@ import Home from './components/Home'
 import Statistics from './components/Statistics'
 import AppliedJobs from './components/AppliedJobs'
 import Blog from './components/Blog'
+import JobDetails from './components/JobDetails'
+import singleJobDetail from './utils/JobDetailLoader'
 const router = createBrowserRouter([
   {
     path:'/',
@@ -29,6 +31,12 @@ const router = createBrowserRouter([
       {
         path:'blog',
         element:<Blog></Blog>
+      },
+      {
+        path:'jobDetails/:id',
+        element:<JobDetails></JobDetails>,
+        loader:({params})=> singleJobDetail(params.id)
+        
       }
     ]
   }
