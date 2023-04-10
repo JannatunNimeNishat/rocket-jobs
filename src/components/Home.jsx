@@ -63,7 +63,9 @@ const Home = () => {
                         key={singleJob.id}
                         singleJob={singleJob}
                         ></FeaturedJobs>) }
-                        <button onClick={()=>setSeeMore(!seeMore)} className='my-btn w-1/6 mx-auto col-span-2'>See ALL Jobs</button>
+                       <div className='mt-5 text-center col-span-2'>
+                       <button onClick={()=>setSeeMore(!seeMore)} className='my-btn'>See ALL Jobs</button>
+                       </div>
                       </div>
                          : 
                         <div className='mt-8 md:grid grid-cols-2 gap-5'>
