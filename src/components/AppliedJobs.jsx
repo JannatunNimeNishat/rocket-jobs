@@ -7,11 +7,12 @@ const AppliedJobs = () => {
     const [appliedJobs,setAppliedJobs] = useState(getAppliedJobs);
 
     const handleRemoteJobsFilter = ()=>{
-        const remoteJobs = appliedJobs.filter(appliedJob => appliedJob.job_location !== 'Onsite'); 
+        const remoteJobs = getAppliedJobs.filter(appliedJob => appliedJob.job_location !== 'Onsite'); 
+        // const remoteJobs = appliedJobs.filter(appliedJob => appliedJob.job_location !== 'Onsite'); 
         setAppliedJobs(remoteJobs);
     }
     const handleOnsiteJobsFilter = ()=>{
-        const onSite = appliedJobs.filter(appliedJob => appliedJob.job_location !== 'Remote');
+        const onSite = getAppliedJobs.filter(appliedJob => appliedJob.job_location !== 'Remote');
         setAppliedJobs(onSite);
     }
 
