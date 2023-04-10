@@ -1,6 +1,4 @@
 
-
-
 const appliedJobs = async()=>{
     // const res = await fetch('jobs.json')
     const res = await fetch('../../public/jobs.json')
@@ -41,4 +39,11 @@ const getLocalStorageData = () =>{
     return appliedJobs;
 }
 
-export  {getLocalStorageData,setToLocalStorage,appliedJobs};
+
+const getAssignmentMarks = async()=>{
+    const res = await fetch('../../public/assignment_marks.json')
+    const assignmentMarks = await res.json()
+    return assignmentMarks
+}
+
+export  {getLocalStorageData,setToLocalStorage,appliedJobs, getAssignmentMarks};
