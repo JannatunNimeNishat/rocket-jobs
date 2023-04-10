@@ -1,4 +1,24 @@
 
+
+
+const appliedJobs = async()=>{
+    // const res = await fetch('jobs.json')
+    const res = await fetch('../../public/jobs.json')
+    const jobs = await res.json();
+    let addedJobs = [];
+    const savedJobs = getLocalStorageData();
+   for(const id in savedJobs){
+    const singleAppliedJobData = jobs.find(singleJob => singleJob.id === id);
+    if(singleAppliedJobData){
+        addedJobs.push(singleAppliedJobData)
+    }
+   }
+
+    return addedJobs;
+}
+
+
+
 const setToLocalStorage = (id)=>{
     let addedJobs = getLocalStorageData();
     const check = addedJobs[id];
@@ -21,4 +41,4 @@ const getLocalStorageData = () =>{
     return appliedJobs;
 }
 
-export  {getLocalStorageData,setToLocalStorage};
+export  {getLocalStorageData,setToLocalStorage,appliedJobs};

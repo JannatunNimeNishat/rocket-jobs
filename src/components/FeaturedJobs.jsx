@@ -1,8 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const FeaturedJobs = ({ singleJob,handleViewDetails }) => {
+const FeaturedJobs = ({ singleJob}) => {
     const { id, company_logo, job_title, company_name, job_location, job_type, location, salary } = singleJob;
-  
+    const navigate = useNavigate();
+    const handleViewDetails = (id) =>{
+        navigate(`/jobDetails/${id}`);
+       }
+
     return (
         <div className='border rounded md:h-[350px] md:w-[648] p-8 m-5 md:m-0'>
             <img className='mt-5' src={company_logo} alt="" />

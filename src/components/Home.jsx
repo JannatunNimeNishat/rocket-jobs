@@ -23,12 +23,7 @@ const Home = () => {
     },[])
    
 
-    //
-    const handleViewDetails = (id) =>{
-        // console.log(id);
-        navigate(`/jobDetails/${id}`);
-       }
-
+   
     return (
         <>
             <div className=' bg-[#D9D9D9] '>
@@ -67,7 +62,6 @@ const Home = () => {
                        { featuredJobs.slice(0,4).map(singleJob => <FeaturedJobs
                         key={singleJob.id}
                         singleJob={singleJob}
-                        handleViewDetails={handleViewDetails}
                         ></FeaturedJobs>) }
                         <button onClick={()=>setSeeMore(!seeMore)} className='my-btn w-1/6 mx-auto col-span-2'>See ALL Jobs</button>
                       </div>
@@ -76,7 +70,6 @@ const Home = () => {
                             { featuredJobs.map(singleJob => <FeaturedJobs
                             key={singleJob.id}
                             singleJob={singleJob}
-                            handleViewDetails={handleViewDetails}
                             ></FeaturedJobs>) }
                         </div>
                     }

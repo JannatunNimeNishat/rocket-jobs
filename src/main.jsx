@@ -10,6 +10,7 @@ import AppliedJobs from './components/AppliedJobs'
 import Blog from './components/Blog'
 import JobDetails from './components/JobDetails'
 import singleJobDetail from './utils/JobDetailLoader'
+import { appliedJobs } from './utils/fakedb'
 const router = createBrowserRouter([
   {
     path:'/',
@@ -26,7 +27,8 @@ const router = createBrowserRouter([
       },
       {
         path:'applied-jobs',
-        element:<AppliedJobs></AppliedJobs>
+        element:<AppliedJobs></AppliedJobs>,
+        loader:appliedJobs
       },
       {
         path:'blog',
