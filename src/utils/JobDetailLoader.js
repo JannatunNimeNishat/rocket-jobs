@@ -5,13 +5,9 @@ const singleJobDetail = async(id)=>{
     const singleJob = jobs.find(singleJob => singleJob.id === id);
     
     if(singleJob){
-        console.log(singleJob);
         return singleJob;
     }
-    else{
-        
-        return 0;
-    }
+
 }
 
 export default singleJobDetail;

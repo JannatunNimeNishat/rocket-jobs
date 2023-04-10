@@ -1,9 +1,30 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { getLocalStorageData } from '../utils/fakedb';
+
+import toast from 'react-hot-toast';
 
 const JobDetails = () => {
     const singleJobDetail = useLoaderData();
     const { id, job_description, job_responsibility, educational_requirements, experiences, salary, job_title,phone,email,location } = singleJobDetail;
+
+
+    //store jobs to local storage
+    const handelApplyJobs = (id)=>{
+        let addedJobs = getLocalStorageData()
+        const check = addedJobs[id];
+        if(!check){
+         addedJobs[id] = 1;
+         toast.success('Successfully Applied to this job');
+        }
+        else{
+            return  toast.error('Already Applied');
+        }
+
+        localStorage.setItem('applied-jobs',JSON.stringify(addedJobs))
+    }
+
+
 
     return (
         <>
@@ -47,7 +68,7 @@ const JobDetails = () => {
                             <p ><span className='font-semibold'>Address: </span>{location}</p>
                         </div>
                     </div>
-                    <button className='my-btn w-full mt-3'>Apply Now</button>
+                    <button onClick={()=> handelApplyJobs(id)} className='my-btn w-full mt-3'>Apply Now</button>
                 </div>
             </div>
         </>
