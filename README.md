@@ -7,7 +7,7 @@
 * React hot toast was used for custom notifications.
 * All though it is a job website but it can provide all the modern features and looks that a 21st century website should have.
 
-### [Live Link : ](https://www.github.com) https://www.github.com
+### [Live Link : ](https://singular-granita-dfdf22.netlify.app/) https://singular-granita-dfdf22.netlify.app/
 
 
 

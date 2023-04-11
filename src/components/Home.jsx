@@ -41,7 +41,7 @@ const Home = () => {
             <section className='mt-32 my-container'>
                 <h3 className='text-3xl font-bold text-center'>Job Category List</h3>
                 <p className='mt-3 text-center'><small>Explore thousands of job opportunities with all the information you need. Its your future</small></p>
-                <div className='mt-8 md:flex justify-between gap-3'>
+                <div className='mt-8 flex flex-col md:flex-row justify-between items-center gap-3'>
                     {
                         jobCategory.map(singleCategory => <JobCategory
                             key={singleCategory.id}
