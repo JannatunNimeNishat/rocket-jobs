@@ -8,7 +8,7 @@ const Footer = () => {
                 <div>
                     <h1 className='text-2xl font-bold'>Rocket Jobs</h1>
                     <p className='mt-3 mb-3'>There are many variations of passages of <br /> Lorem Ipsum , but the majority have suffered <br /> alteration in some form.</p>
-                    <img className='mx-auto md:mx-0 ' src="Group.png" alt="" />
+                    <img className='mx-auto md:mx-0 ' src="group.png" alt="" />
                 </div>
                 <div>
                     <h1 className='text-xl font-bold'>Company</h1>

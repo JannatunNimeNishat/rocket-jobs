@@ -1,5 +1,4 @@
 const singleJobDetail = async (id) => {
-    console.log('test');
     const res = await fetch('/jobs.json')
     const jobs = await res.json();
 
